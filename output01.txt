@@ -1,0 +1,6 @@
+# includes a cycle (all mandatory) plus a connected edge
+18
+
+# everything previously, plus a component (single edge) not connected to the
+# rest of the solution, plus a new mandatory edge
+33
