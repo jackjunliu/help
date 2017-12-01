@@ -185,19 +185,6 @@ vector<string> parse_line(const string& target, const string& delimiter)
     return result;
 }
 
-void print_menu() {
-    cout << endl;
-    cout << "The following commands are available: " << endl;
-    cout << "  BID node_number node_number cost" << endl;
-    cout << "  MANDATORY node_number node_number cost" << endl;
-    cout << "  COST?" << endl;
-    cout << "  COMPONENTS?" << endl;
-    cout << "  CYCLE?" << endl;
-    cout << "  LIST?" << endl;
-    cout << "  SHORTEST_PATH? node_number node_number" << endl;
-    cout << "  END" << endl;
-}
-
 int main() {
     Graph g(MAX_NODE);
     string line;
@@ -205,7 +192,6 @@ int main() {
     int node_1, node_2, cost;
     size_t i;
 
-    print_menu();
     do {
  	getline(std::cin, line);
      	cmd_line_split_str = parse_line(line, " ");
@@ -236,7 +222,6 @@ int main() {
 	    // Do nothing here.
 	} else {
 	    cout << line << " is invalid." << endl;
-	    print_menu();
 	}
     } while (cmd_line_split_str[0] != "END");
     return 0;
