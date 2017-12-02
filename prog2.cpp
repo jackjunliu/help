@@ -1,3 +1,7 @@
+//Program Assignment 2
+//CS130A Fall 2017
+//By Jack Liu
+
 #include <iostream>
 #include <vector>
 #include <algorithm>
