@@ -158,6 +158,8 @@ void Graph::ShortestPath(int u, int v, bool first) {
     if (temp != v) {
 	ShortestPath(temp, v, false);
     }
+    //should probably add in test if mandatory is called with bid before solution
+    //if solution is done before, bid and mandatory should be the same
 }
 
 void Graph::print_MST() {
@@ -199,12 +201,12 @@ int main() {
     do {
  	getline(std::cin, line);
      	cmd_line_split_str = parse_line(line, " ");
-	if (cmd_line_split_str[0] == "BID") { //difference between bid and mandatory is one has weight, other does not
+	if (cmd_line_split_str[0] == "BID") { //difference between bid and mandatory is one has to be in solution
 	    node_1 = atoi(cmd_line_split_str[1].c_str());
 	    node_2 = atoi(cmd_line_split_str[2].c_str());
 	    cost = atoi(cmd_line_split_str[3].c_str());
 	    g.AddWeightedEdge(node_1, node_2, cost, false);
-        } else if (cmd_line_split_str[0] == "MANDATORY") { //adds weight and stores it
+        } else if (cmd_line_split_str[0] == "MANDATORY") { //this one has to be in the solution
     	    node_1 = atoi(cmd_line_split_str[1].c_str());
 	    node_2 = atoi(cmd_line_split_str[2].c_str());
 	    cost = atoi(cmd_line_split_str[3].c_str());
